@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS</title>
+    <link rel="stylesheet" href="master.css">
+</head>
+    <form method="get">
+        <h1>Task1</h1>
+        <input type="text" required name="name">
+        <br>
+        <input type="number" min="18" max="60" name="age">
+        <br>
+        <input type="date" name="birthday">
+        <br>
+        <textarea id="w3review" name="message" rows="4" cols="50" >
+        </textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <hr>
+    <h1>Task2</h1>
+    <br>
+    <h1 id="title"><a href="www.google.com" style="color:greenyellow;">we</a><a href="www.facebook.com" style="color:pink;">lc</a><a href="www.youtube.com" style="color:rgb(89, 75, 192);">om</a><a href="www.x.com" style="color:rgb(185, 233, 41);">e </a> to my website </h1>
+    <input type="range" name="range" value="30" min="0" max="80" oninput="document.getElementById('title').style.fontSize = (this.value)+'Px'">
+    <hr>
+    <h1>Task3</h1>
+    <details>
+    <summary><img src="./images/1.jpeg" style="width: 20px; height: 20px;" alt="1" id="1">Username1</summary>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quibusdam atque magnam minima, reiciendis provident. Quas, iusto modi reiciendis dicta vero tempore molestias assumenda soluta perspiciatis dolorum. Quisquam, quibusdam optio.</p>
+    </details>
+    <details>
+    <summary><img src="./images/1.jpeg" style="width: 20px; height: 20px;" alt="1" id="1">Username1</summary>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quibusdam atque magnam minima, reiciendis provident. Quas, iusto modi reiciendis dicta vero tempore molestias assumenda soluta perspiciatis dolorum. Quisquam, quibusdam optio.</p>
+    </details>
+    <details>
+    <summary><img src="./images/1.jpeg" style="width: 20px; height: 20px;" alt="1" id="1">Username1</summary>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quibusdam atque magnam minima, reiciendis provident. Quas, iusto modi reiciendis dicta vero tempore molestias assumenda soluta perspiciatis dolorum. Quisquam, quibusdam optio.</p>
+    </details>
+    <hr>
+    <h1>Task4</h1>
+    <button  onclick="dialog.showModal()">Help</button>
+    <dialog id="dialog" >
+        <img src="./images/4.png" alt="alternative to image">
+        <p>for more information visit <a href="www.google.com"></a></p>
+        <button onclick="dialog.close()">close</button>
+    </dialog>
+
+    <hr>
+    <h1>Task5</h1>
+    <video controls>
+        <source src="./videos/hxh.mp4">
+    </video>
+</body>
+</html>
