@@ -1,0 +1,94 @@
+
+.navbar-nav li{
+    font-size: large;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 2px;
+}
+.navbar{
+    background-color: #4d636f;
+    padding: 0;
+    justify-content: space-between;
+}
+.navbar .test1 .test{
+    background-color: white;
+    color: black;
+}
+.navbar ul li:hover, 
+.navbar ul li:hover i{
+    background-color: aliceblue;
+    color: black;
+}
+
+.left-side{
+    flex-direction: column;
+}
+.top-side ul li{
+    padding-bottom: 10px;
+    padding-right:5px ;
+}
+.top-side ul li i{
+    padding-right: 10px;
+    text-align: center;
+    color: rgb(148, 163, 176) ;
+}
+
+.center-side{
+    flex-direction: column;
+    height: 120px;
+}
+
+.center-side button{
+    height: calc(100% /3);
+    border: none;
+    background-color: rgb(148, 163, 176);
+    text-align: start;
+    padding-left: 30px;
+    color: white;
+}
+.center-side button i{
+    padding-right: 10px;
+}
+
+.center-side button:hover{
+    background-color: rgb(206, 204, 204);
+}
+
+.bottom-side {
+    padding: 10px ;
+}
+.bottom-side h1{
+    font-size: 15px;
+}
+.bottom-side ul{
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 19px;
+}
+.bottom-side ul li{
+    height: 20px;
+    padding: 4px;
+    background-color: rgb(59, 59, 108);
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+
+.last{
+    background-color:#dfe5e8;
+    padding:10px;
+    font-size: 16px;
+}
+.last i{
+    top: 0;
+    right: 0;
+    height: 30px;
+    width: 30px;
+    color: black;
+    font-size: 14px;
+    border-top-right-radius: 5px;
+    background-color: #4d636f;
+}
