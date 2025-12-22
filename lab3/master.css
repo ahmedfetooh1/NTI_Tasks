@@ -1,0 +1,267 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    
+ul {
+    margin-left: 80px;
+    width: 400px;
+    height: 50px;
+    /* border: px gray solid; */
+    border-radius: 5px;
+    margin: 0 auto;
+    /* background-color: red; */
+}
+ul li{
+    display: inline-block;
+    color: black;
+    background-color: gray;
+    width:20% ;
+    /* background-color: blue; */
+    margin: auto;
+    /* padding: 0px -10px; */
+    height: 100%;
+    text-align: center ;
+    margin-left: -4px;
+    /* list-style-type: none; */
+    /* border-right: 0;
+    margin-right:0 ;
+    padding-right: 0; */
+    
+}
+li i {
+    padding-top: 20%;
+    font-size: 20px;
+}
+.unique{
+    background-color: green;
+}
+ul li:hover{
+    background-color: green;
+}
+
+
+/* ------------------ */
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    border-radius: 25px;
+    padding: 5px;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+
+.chip img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.chip-content {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    /* This is the key for the animation */
+    max-width: 200px; 
+    transition: max-width 0.5s ease-in-out, padding 0.5s;
+    padding: 0 10px;
+}
+
+/* The "Closed" state class */
+.chip-content.closed {
+    max-width: 0;
+    padding: 0;
+}
+
+.close-btn {
+    margin-left: 70px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 60px;
+    
+}
+
+.close-btn:hover {
+    color: #000; 
+}
+/* ----- */
+.container {
+    width: 140px;
+    height: 50px;
+    position: relative;
+    margin: 0 auto;
+
+}
+.container .image {
+    width: 40px;
+    height: 40px;
+    background-image: url(images/clock.jpeg);
+    display: inline-block;
+    border: 1px gray solid;
+    position: absolute;
+    border-radius: 50%;
+
+
+}
+
+.container .name{
+    width: 100px;
+    height: 40px;
+    left: 30px;
+    display: inline-block;
+    align-items: center;
+    background-color: gray;
+    border: 2px solid gray;
+    border-radius: 30px;
+    position: absolute;
+    text-align: center;
+    padding: 7px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color:black;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s;
+    padding-top: 2px;
+    position: absolute;
+}
+
+.con .van{
+    background-image:url(./images/fan.png);
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    animation-name: van;
+    animation-iteration-count: infinite;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+
+
+}
+.con img{
+    width: 190px;
+    height: 140px;
+    animation-name: van;
+    animation-iteration-count: infinite;
+    /* animation-duration: .5s; */
+    animation-timing-function: linear;
+}
+.slow{
+    animation-duration: 1s;
+}
+.medium{
+    animation-duration: .5s;
+}
+.fast{
+    animation-duration: .2s;
+}
+
+@keyframes van{
+    0%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 360deg;
+    }
+}
+.con button {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+
+
+.heart{
+    font-size: 150px;
+    color: red;
+    text-align: center;
+    transform: scale(1.5);
+    animation-name: heart ;
+    animation-iteration-count: infinite;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out;
+}
+.heart:hover{
+    animation-duration: 0s;
+}
+
+@keyframes heart{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.5);
+    }
+}
+
+#rightI,
+#leftI{
+    position: relative;
+    display: inline-block;
+}
+#rightI::after {
+    content: attr(description);
+    position: absolute;
+    display: inline-block;
+    width: 250px;
+    height: 60px;
+    padding: 8px;
+    background-color: #333;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden; 
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index:10 ; 
+} 
+
+.circle {
+    display: inline-block;
+}
+#rightI:hover,
+#leftI:hover {
+    fill: blue;
+}
+
+#rightI:hover::after,
+#leftI:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+#rightI:hover::before, 
+#leftI:hover::before {
+    content: '';
+    position: absolute;
+    top: -10px; 
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent; 
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 11;
+}
+
+#rightI:hover::before, 
+#leftI:hover::before{
+    opacity: 1;
+    visibility: visible;
+}

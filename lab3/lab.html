@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="master.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <h1>Task1</h1>
+        <!-- <div> -->
+            <ul>
+                <li class="unique"><i class="fa-solid fa-house"></i></li>
+                <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                <li><i class="fa-solid fa-envelope"></i></li>
+                <li><i class="fa-solid fa-globe"></i></li>
+                <li><i class="fa-solid fa-trash"></i></li>
+            </ul>
+        <!-- </div> -->
+        <br>
+    <hr>
+    <h1>Task2</h1>
+    <div class="chip">
+        <img src="images/per.jpeg" alt="User" id="chip-img">
+            <div class="chip-content" id="chip-content">
+                <span>John Doe</span>
+                <span class="close-btn" id="close-btn">&times;</span>
+            </div>
+    </div>
+
+<hr>
+<h1>Task3</h1>
+<div class="con">
+    <!-- <div class="van"></div> -->
+    <img src="./images/fan.png" id="fan" alt="">
+    <button id="slow" onclick="fan.style.animationDuration =1+'s'">1</button>
+    <button id="medium" onclick="fan.style.animationDuration = .5+'s'">2</button>
+    <button id="fast" onclick="fan.style.animationDuration = .25+'s'">3</button>
+    <br>
+    <button id="on" onclick="fan.style.animationName='van'">ON</button>
+    <button id="off" onclick="fan.style.animationName='stop'">OFF</button>
+    <button id="dir" onclick="fan.style.animationDirection='reverse'">Dir</button>
+</div>
+<br>
+<hr>
+<h1>Task4</h1>
+<div class="heart">
+    <i class="fa-solid fa-heart"></i>
+</div>
+<br>
+<hr>
+<h1>Task5</h1>
+<svg viewBox="0 0 200 200" width="400"  height="400" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="100" fill="yellow" r="78" stroke="black" stroke-width="3" class="circle"/>
+    <g class="eyes">
+    <circle cx="61" cy="82" r="12" id="leftI" description="this is right aye"/>
+    <circle cx="127" cy="82" r="12" id="rightI" description="this is left aye"/>
+    </g>
+<path d="m136.81 116.53c.69 26.17-64.11 42-81.52-.73" style="fill:none; stroke: black; stroke-width: 3;" id="mouse" description="this is mouse"/>
+</svg>
+<div class="special"></div>
+
+<script>
+const chipImg = document.getElementById('chip-img');
+const chipContent = document.getElementById('chip-content');
+const closeBtn = document.getElementById('close-btn');
+
+// Close when clicking the X
+closeBtn.addEventListener('click', (e) => {
+  e.stopPropagation(); // Prevents clicking the X from triggering the image click
+    chipContent.classList.add('closed');
+    closeBtn.classList.remove('close-btn')
+    
+});
+
+// Open when clicking the Image
+chipImg.addEventListener('click', () => {
+    chipContent.classList.remove('closed');
+});
+</script>
+</body>
+</html>
