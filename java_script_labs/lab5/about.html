@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const queryString = window.location.search;
+        
+
+        const urlParams = new URLSearchParams(queryString);
+        let genValue = urlParams.get('genValue');
+        let color = urlParams.get('color');
+        let nameInput = urlParams.get('nameInput');
+        let colorName = `<span style="color:${color};font-weight:bold">${nameInput}</span>`
+        
+        
+        
+        
+        if (genValue === 'male') {
+            document.writeln(`<img src="images/male.jpeg" alt="">  welcome ${colorName}`)
+            
+            
+        }else if (genValue === 'female') {
+            document.writeln(`<img src="images/female.jpeg" alt="">  welcome ${colorName}`)
+        }
+        else{
+            document.writeln(`<h3>wrong gender`)
+        }
+    </script>
+</body>
+</html>

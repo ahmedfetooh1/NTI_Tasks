@@ -73,8 +73,6 @@ var checked = document.querySelector('input[name="gender"]:checked');
 
 
 
-
-
 let genValue
 register.addEventListener('click', function() {
     checked = document.querySelector('input[name="gender"]:checked');

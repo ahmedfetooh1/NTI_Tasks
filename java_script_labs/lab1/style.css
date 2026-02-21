@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.bouns{
+    width: 500px;
+    height: 300px;
+    margin-top: 20px;
+    border: 3px solid gray;
+}
+.bouns h3{
+    background-color: rgb(236, 229, 229);
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+}
+.bouns h5{
+    padding: 10px;
+}
+
+.skills{
+    border: 1px solid;
+    margin: 0 10px 10px 10px;
+    display: flex;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.skills .skill{
+    border: 1px solid;
+    border-radius: 2px;
+    display: flex;
+    width: fit-content;
+    height: 30px;
+    background-color: rgba(229, 227, 223, 0.988);
+}
+.skills .skill button{
+    width: 20px;
+    height: 20px;
+}
+p{
+    padding: 10px;
+}

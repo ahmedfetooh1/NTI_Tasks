@@ -1,0 +1,37 @@
+show dbs
+1-------------
+use FacultySystemDB
+2 , 3 ------------
+db.student.insertOne({firstName:"ahmed",lastName:"fetoo",age:20,faculty:{name:"computerScience",address:"KFS"},grades:[{name:"math",grade:50,pass:true},{name:"programming",grade:60,pass:true}],isFired:false})
+db.student.insertMany([
+    {firstName:"samy",lastName:"sayed",age:21,faculty:{name:"computerScience",address:"tanta"},grades:[{name:"math",grade:50,pass:true},{name:"programming",grade:60,pass:true}],isFired:true},
+    {firstName:"karem",lastName:"hany",age:20,faculty:{name:"computerScience",address:"banha"},grades:[{name:"math",grade:50,pass:true},{name:"programming",grade:60,pass:true}],isFired:false}
+    ])
+4------------
+db.student.find()
+db.student.find({$or[firstName:"ahmed",lastName:"ahmed"]})
+db.student.find({firstName:{$ne:"ahmed"}})
+db.student.find({age:{$lt:21}})
+db.student.find({isFired:true})
+db.student.find({age:{$gte:21},{faculty:{$exists:true}}})
+db.student.find({firstName:"ahmed:},{firstName:1,lastName:1,isFired:1,_id:0})
+5---------
+db.student.updateOne({firstName:"ahmed"},{$set:{lastName:"ahmed"}})
+6---------
+db.student.deleteMany({isFired:true})
+7---------  
+db.student.drop()
+8---------
+db.dropDatabase()
+9---------
+use FacultySystemV2
+db.student.insertOne({firstName:"ahmed",lastName:"fetoo",isFired:false,facultyID:1,Courses: [{ CourseID: 101, grade: 85 },{ CourseID: 102, grade: 90 }]})
+db.faculty.insertOne({facultyName:"computerScience",address:"tanta"})
+db.course.insertMany([
+  { _id: 101, CourseName: "Database Systems", FinalMark: 60 },
+  { _id: 102, CourseName: "Algorithms", FinalMark: 50 },
+  { _id: 103, CourseName: "AI", FinalMark: 90 }
+  ])
+db.student.insertOne({FirstName: "Ahmed",lastName: "Ali",IsFired: false,FacultyID: 2,Courses: [{ CourseID: 101, grade: 85 },{ CourseID: 102, grade: 90 }]})
+db.student.insertOne({FirstName: "marwan",lastName: "fared",IsFired: false,FacultyID: 2,Courses: [{ CourseID: 101, grade: 85 },{ CourseID: 102, grade: 90 }]})
+

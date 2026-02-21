@@ -1,0 +1,47 @@
+1------------
+db.Course.aggregate([
+  {
+    $group: {
+      _id:"$courseName", 
+      totalMarks: { $sum: "$finalMark" }
+    }
+  },
+  {$sort:{totalMarks:-1}}
+])
+
+2---------
+db.Student.aggregate([{
+    $group:{
+        _id:null,
+        count:{$sum:1}
+    }
+}])
+
+3---------  
+db.Student.insertOne({
+  name: "Hamoudi",
+  courses: [
+    { courseName: "Database", finalMark: 80 },
+    { courseName: "AI", finalMark: 90 }
+  ],
+  faculty_id: ObjectId("650000000000000000000002"),
+  faculty_ref: {
+    "$ref": "Faculty",
+    "$id": ObjectId("650000000000000000000002")
+  }
+});
+
+4---------  
+var student = db.Student.findOne({ name: "Hamoudi" });
+db.Faculty.find({ _id: student.faculty_id });
+
+5---------
+var student = db.Student.findOne({ name: "Hamoudi" });
+db[student.faculty_ref.$ref].find({ _id: student.faculty_ref.$id });
+
+6---------
+db.Faculty.createIndex({ FacultyName: 1 }, { unique: true });
+
+7---------  
+//mongodump --db=FacultySystemDB --out=D:/Backup 
+//mongorestore --db=FacultySystemDB_New D:/Backup/FacultySystemDB

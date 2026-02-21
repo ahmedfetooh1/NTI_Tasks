@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About page</title>
+</head>
+
+<body>
+
+
+
+
+  <script>
+    const urlVal = location.href.split("?").pop().split("&").map((el)=>{
+      return el.split("=")
+    });
+    const urlSeachParams = location.search.split("&").map((el)=>{
+      return el.split("=")
+    });
+    const objVals = Object.fromEntries(urlSeachParams);
+    console.log("searchParaams", objVals)
+
+    document.writeln(`<span>Welcome <b>${urlSeachParams.name}</b></h1>`)
+
+  </script>
+</body>
+
+</html>
