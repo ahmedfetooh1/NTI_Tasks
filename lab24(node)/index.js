@@ -22,8 +22,8 @@ dotenv.config()
 
 
 
-let todosRoutes = require("./routes/todos")
-let usersRoutes = require("./routes/users")
+let todosRoutes = require("./routes/todos");
+let usersRoutes = require("./routes/users");
 
 app.use("/todo" , todosRoutes);
 app.use("/user", usersRoutes)

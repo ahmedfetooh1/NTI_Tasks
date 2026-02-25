@@ -9,16 +9,16 @@ let {getAllUsers , getUserById , deleteUserById , updateUserById  , saveNewUser 
 
 Router.get('/',getAllUsers)
 
-Router.get("/:id",getUserById)
-
-Router.post("/login" , login)
-
 Router.post('/',saveNewUser)
+Router.post("/login" , login)
+Router.patch("/update" ,auth ,updatePassword)
+
+Router.get("/:id",getUserById)
 
 Router.patch('/:id',updateUserById)
 
 Router.delete("/:id",deleteUserById)
 
-Router.patch("/updateMyPassword", auth ,updatePassword)
+
 
 module.exports = Router

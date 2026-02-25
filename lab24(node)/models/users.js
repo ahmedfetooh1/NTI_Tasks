@@ -40,7 +40,7 @@ let userModel = mongoose.Schema({
 
 
 userModel.pre("save",async function(){
-    let salt = await bcrypt.genSalt(20)
+    let salt = await bcrypt.genSalt(5)
     let hashedPassword = await bcrypt.hash(this.password , salt)
     this.password = hashedPassword
 })
