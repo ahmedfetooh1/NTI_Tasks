@@ -19,8 +19,8 @@ let saveNewUser = async (req, res) => {
     try {
         let newUser = req.body;
         let saveUser = await userModel.create(newUser);
-        let token = jwt.sign({id:user._id ,username : user.username },process.env.SECRET , { expiresIn: '1h' })
-        return res.status(200).json({message : "success" , data:saveUser , token:token})
+        // let token = jwt.sign({id:user._id ,username : user.username },process.env.SECRET , { expiresIn: '1h' })
+        return res.status(200).json({message : "success" , data:saveUser})
 
     } catch (error) {
         console.log(error);
@@ -63,13 +63,13 @@ let updateUserById = async (req, res) => {
 
 let deleteUserById = async (req, res) => {
 
-    const { id } = req.params; 
+    let { id } = req.params; 
     try {
         await userModel.findByIdAndDelete(id);
         return res.status(200).json({ message: "Deleted successfully"});
 
     } catch (error) {
-        return res.status(404).json({ message: "user not found" });
+        return res.status(404).json({ message: "user not found"});
     }
 }
 

@@ -7,12 +7,12 @@ async function auth(req,res,next){
     let {token} = req.headers
     // console.log(token)
     if(!token){
-        return res.status(401).json({message:"you must be login first"})
+        return res.status(401).json({message:"you should be login first"})
     }
 
     try {
         let decoded = await util.promisify(jwt.verify)(token , process.env.SECRET)
-        // console.log(decoded);
+        
         req.id = decoded.id 
         req.role = decoded.role
         next()
@@ -20,7 +20,7 @@ async function auth(req,res,next){
     } catch (err) {
         return res.status(401).json({message:"you are not authenticated try again"})
     }
-    // jwt.verify(authorization, process.env.SECRET)
+
 
 }
 

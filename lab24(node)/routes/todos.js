@@ -7,14 +7,15 @@ let {getAllTodos , saveNewTodo , getTodoById , deleteTodoById , updatedTodoById 
 
 Router.get("/",getAllTodos)
 
-// Router.post("/",saveNewTodo)
-Router.route("/").get(getAllTodos).post(auth ,authorize('user' , 'admin') , saveNewTodo)
+Router.post("/",saveNewTodo)
+// Router.post(auth ,authorize('user' , 'admin') , saveNewTodo)
+
+Router.delete("/:id",deleteTodoById)
 
 Router.get("/:id",authorize(['admin', 'user']),getTodoById)
 
 Router.patch("/:id",auth,updatedTodoById)
 
-Router.delete("/:id",authorize('admin'),deleteTodoById)
 
 
 module.exports = Router

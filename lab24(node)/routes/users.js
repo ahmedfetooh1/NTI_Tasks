@@ -11,7 +11,7 @@ Router.get('/',getAllUsers)
 
 Router.post('/',saveNewUser)
 Router.post("/login" , login)
-Router.patch("/update" ,auth ,updatePassword)
+Router.patch("/update" ,auth,updatePassword)
 
 Router.get("/:id",getUserById)
 

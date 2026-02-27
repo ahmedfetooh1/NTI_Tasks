@@ -55,7 +55,7 @@ let deleteTodoById = async (req, res) => {
 
     const { id } = req.params; 
     try {
-        let deletedTodo = await todoModels.findByIdAndDelete(id);
+        await todoModels.findByIdAndDelete(id);
         return res.status(200).json({ message: "Deleted successfully"});
 
     } catch (error) {
@@ -65,5 +65,5 @@ let deleteTodoById = async (req, res) => {
 
 
 
-module.exports = {getAllTodos,getTodoById , saveNewTodo , updatedTodoById , deleteTodoById }
+module.exports = {getAllTodos , getTodoById , saveNewTodo , updatedTodoById , deleteTodoById }
 
